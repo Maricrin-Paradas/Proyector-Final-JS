@@ -1,31 +1,28 @@
-const pepper = "papel"
-const rock = "roca"
-const scissor = "tijera"
-const machin = ["papel", "roca", "tijera"]
-const win = "Ganaste"
-const lost = "Perdiste"
+import {value, machin, win, lost} from './data.js'
 
+const rockButton = document.getElementById("rock");
+const pepperButton = document.getElementById("pepper");
+const scissorButton = document.getElementById("scissor");
 
-let selectUser = prompt("Escoge piedra, papel o tijera")
+let selectUser = prompt("Escoge roca, papel o tijera");
 
-const playing=(selected) => {
-  const machineOptions = machin[ Math.floor(Math.random() * 3)]
+const playing = (selected) => {
+  const machineOptions = machin[Math.floor(Math.random() * 3)];
 
   if (selected === machineOptions) {
     alert("Empate");
-  } else if (selected === rock) {
-    if (machineOptions === pepper) alert(`${lost} la maquina eligio ${machineOptions}`);
-    if (machineOptions === scissor) alert(`${win} la maquina eligio ${machineOptions}`);
+  } else if (selected === value.rock) {
+    if (machineOptions === value.pepper) alert(`${lost} la maquina eligio ${machineOptions}`);
+    if (machineOptions === value.scissor) alert(`${win} la maquina eligio ${machineOptions}`);
 
-  } else if (selected === pepper) {
-    if (machineOptions === rock) alert(`${win} la maquina eligio ${machineOptions}`);
-    if (machineOptions === scissor) alert(`${lost} la maquina eligio ${machineOptions}`);
+  } else if (selected === value.pepper) {
+    if (machineOptions === value.rock) alert(`${win} la maquina eligio ${machineOptions}`);
+    if (machineOptions === value.scissor) alert(`${lost} la maquina eligio ${machineOptions}`);
 
-  } else if (selected === scissor) {
-    if (machineOptions === pepper) alert(`${win} la maquina eligio ${machineOptions}`);
-    if (machineOptions === rock) alert(`${lost} la maquina eligio ${machineOptions}`);
+  } else if (selected === value.scissor) {
+    if (machineOptions === value.pepper) alert(`${win} la maquina eligio ${machineOptions}`);
+    if (machineOptions === value.rock) alert(`${lost} la maquina eligio ${machineOptions}`);
   }
-}
+};
 
-playing(selectUser);
-
+playing(selectUser)
