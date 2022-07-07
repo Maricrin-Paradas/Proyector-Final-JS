@@ -4,7 +4,10 @@ const rockButton = document.getElementById("rock");
 const pepperButton = document.getElementById("pepper");
 const scissorButton = document.getElementById("scissor");
 
-let selectUser = prompt("Escoge roca, papel o tijera");
+function alert() {
+  let selectUser = prompt("Escoge roca, papel o tijera");
+}
+
 
 const playing = (selected) => {
   const machineOptions = machin[Math.floor(Math.random() * 3)];
