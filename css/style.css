@@ -1,0 +1,8 @@
+* {
+  font-family: "Montserrat";
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("../IMG/Montserrat-Italic-VariableFont_wght.ttf");
+}

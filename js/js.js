@@ -53,12 +53,13 @@ scissorButton.onclick = () => {
 inputNombres.onchange = (e) => {
   console.log(e.target.value);
   nombres.push(e.target.value);
-  console.log(nombres)
+  mostrarNombres.innerHTML = ""
+  for (let i = 0; i < nombres.length; i++) {
+    let list = document.createElement("li");
+    list.innerHTML = nombres[i];
+    mostrarNombres.appendChild(list);
+  }
 }
 
-for (let i = 0; i < nombres.length; i++){
-  let list = document.createElement("li")
-  list.innerHTML = nombres[i]
-  mostrarNombres.appendChild(list)
-}
+
 
