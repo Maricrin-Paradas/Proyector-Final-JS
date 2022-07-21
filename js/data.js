@@ -4,9 +4,10 @@ let value = {
   scissor: "tijera",
 };
 
+
 const machin = ["papel", "roca", "tijera"];
 const win = "Ganaste";
 const lost = "Perdiste";
-let nombres = ["Rachel", "Monica", "Phibe"]
+let nombres = [JSON.parse(localStorage.getItem("nombres"))];
 
-export {value, machin, win, lost, nombres}
+export {value, machin, win, lost, nombres, };
