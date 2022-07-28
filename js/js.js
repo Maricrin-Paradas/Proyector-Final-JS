@@ -1,10 +1,5 @@
 import { value, machin, win, lost, nombres } from "./data.js";
 
-let infoPerson = {
-  nombre: "",
-  value: 0,
-};
-
 const rockButton = document.getElementById("rock");
 const pepperButton = document.getElementById("pepper");
 const scissorButton = document.getElementById("scissor");
@@ -12,28 +7,55 @@ const scissorButton = document.getElementById("scissor");
 const resultado = document.getElementById("resultado");
 const mostrarNombres = document.getElementById("nombres");
 const inputNombres = document.getElementById("input");
-//let selectUser = prompt("Escoge roca, papel o tijera");
+
+
 
 const playing = (selected) => {
   const machineOptions = machin[Math.floor(Math.random() * 3)];
 
   if (selected === machineOptions) {
-    resultado.innerHTML = "Empate";
-  } else if (selected === value.rock) {
+    resultado.innerHTML =
+    Swal.fire({
+      icon: "error",
+      title: "Empate",
+    });
+  }
+  else if (selected === value.rock) {
     if (machineOptions === value.pepper)
-      resultado.innerHTML = `${lost} la maquina eligio ${machineOptions}`;
+      resultado.innerHTML = Swal.fire({
+        icon: "error",
+        title: `${lost} la maquina eligio ${machineOptions}`,
+      });
+
     if (machineOptions === value.scissor)
-      resultado.innerHTML = `${win} la maquina eligio ${machineOptions}`;
-  } else if (selected === value.pepper) {
+      resultado.innerHTML = Swal.fire({
+        icon: "error",
+        title: `${win} la maquina eligio ${machineOptions}`,
+      });
+  }
+  else if (selected === value.pepper) {
     if (machineOptions === value.rock)
-      resultado.innerHTML = `${win} la maquina eligio ${machineOptions}`;
+      resultado.innerHTML = Swal.fire({
+        icon: "error",
+        title: `${win} la maquina eligio ${machineOptions}`,
+      });
     if (machineOptions === value.scissor)
-      resultado.innerHTML = `${lost} la maquina eligio ${machineOptions}`;
-  } else if (selected === value.scissor) {
+      resultado.innerHTML = Swal.fire({
+        icon: "error",
+        title: `${lost} la maquina eligio ${machineOptions}`,
+      });
+  }
+  else if (selected === value.scissor) {
     if (machineOptions === value.pepper)
-      resultado.innerHTML = `${win} la maquina eligio ${machineOptions}`;
+      resultado.innerHTML = Swal.fire({
+        icon: "error",
+        title: `${win} la maquina eligio ${machineOptions}`,
+      });
     if (machineOptions === value.rock)
-      resultado.innerHTML = `${lost} la maquina eligio ${machineOptions}`;
+      resultado.innerHTML = Swal.fire({
+        icon: "error",
+        title: `${lost} la maquina eligio ${machineOptions}`,
+      });
   }
 };
 
@@ -52,7 +74,7 @@ scissorButton.onclick = () => {
   console.log(value.scissor);
 };
 
-//playing(selectUser);
+
 window.onload = () => {
   let result = JSON.parse(localStorage.getItem("nombres"));
   mostrarNombres.innerHTML = "";
@@ -76,5 +98,4 @@ inputNombres.onchange = (e) => {
     list.innerHTML = result[i].name;
     mostrarNombres.appendChild(list);
   }
-
 };
