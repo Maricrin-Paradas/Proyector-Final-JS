@@ -20,11 +20,21 @@
 
     <h2 class=" d-flex justify-content-center" >Escoge roca, papel o tijera</h2>
 
-    <div class="d-grid gap-3 justify-content-center">
-    <h6 ">Nombres</h6>
-    <input id="input" type="text" placeholder="Añade tu nombre" class="form-control">
-    <ul id="nombres"></ul>
-    </div>
+    <form id="formPeople" >
+    <div class="d-grid gap-2 d-flex justify-content-center">
+        <div class="d-grid gap-3 justify-content-center">
+          <h6 ">Nombres</h6>
+            <input id="inputNombre" type="text" placeholder="Añade tu nombre" class="form-control">
+          </div>
+          <div class="d-grid gap-3 justify-content-center">
+            <h6 ">Apellidos</h6>
+            <input id="inputApellido" type="text" placeholder="Añade tu apellido" class="form-control">
+          </div>
+        </div>
+        <button id="buttonSubmit" class="btn btn-outline-success fs-1" type="submit"></button>
+      </form>
+      <ul id="nombres"></ul>
+      <ul id="apellido"></ul>
 
     <div id="grupoBotones" class=" d-flex justify-content-center gap-2 col-6 mx-auto">
       <button id="rock" type="button" class="btn btn-outline-success fs-1">Roca       <img src="./img/roca.png"class="w-75"/></button>

@@ -1,0 +1,19 @@
+[
+  {
+    "nombre": "Monica",
+    "apellido": "Geller",
+    "puntaje": 250
+  },
+
+  {
+    "nombre": "Ross",
+    "apellido": "Geller",
+    "puntaje": 175
+  },
+
+  {
+    "nombre": "Phoebe",
+    "apellido": "Buffay",
+    "puntaje": 75
+  }
+]

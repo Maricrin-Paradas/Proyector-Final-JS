@@ -8,12 +8,28 @@ let value = {
 const machin = ["papel", "roca", "tijera"];
 const win = "Ganaste";
 const lost = "Perdiste";
-let nombres = [];
 
-if (localStorage.getItem("nombres")) {
-  nombres = JSON.parse(localStorage.getItem("nombres"));
+let personas = [];
+
+if (localStorage.getItem("personas")) {
+  personas = JSON.parse(localStorage.getItem("personas"));
 } else {
-  localStorage.setItem("nombres", JSON.stringify(nombres));
+  localStorage.setItem("personas", JSON.stringify(personas));
 }
 
-export { value, machin, win, lost, nombres };
+console.log(personas)
+
+if (personas.length === 0) {
+  window.onload = monstrarNombresFinal()
+  function monstrarNombresFinal() {
+    fetch("./js/usuarios.json")
+      .then((promise) => promise.json())
+      .then((data) => {
+        console.log(data);
+        personas.push(...data);
+        localStorage.setItem("personas", JSON.stringify(personas));
+      });
+  }
+}
+
+export { value, machin, win, lost, personas };
