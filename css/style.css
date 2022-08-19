@@ -3,10 +3,13 @@
 }
 
 @font-face {
-  font-family: Montserrat;
-  src: url("../IMG/Montserrat-Italic-VariableFont_wght.ttf");
+  font-family: Courgette;
+  src: url("../img/Courgette-Regular.ttf");
 }
 body{
-  background: rgb(215,230,212);
-  background: linear-gradient(90deg, rgba(215,230,212,1) 0%, rgba(221,231,236,1) 50%, rgba(255,245,210,1) 100%);
+  /* Created with https://www.css-gradient.com */
+  background: rgba(210, 233, 183, 1.0);
+  background: radial-gradient(to bottom, rgba(210, 233, 183, 1.0), rgba(181, 252, 26, 1.0));
+
 }
+

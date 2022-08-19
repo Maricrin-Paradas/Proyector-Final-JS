@@ -9,6 +9,18 @@ const machin = ["papel", "roca", "tijera"];
 const win = "Ganaste";
 const lost = "Perdiste";
 
+const rockButton = document.getElementById("rock");
+const pepperButton = document.getElementById("pepper");
+const scissorButton = document.getElementById("scissor");
+
+const resultado = document.getElementById("resultado");
+const mostrarNombres = document.getElementById("nombres");
+const mostrarApellido = document.getElementById("apellido");
+const buttonDelete = document.getElementById("buttonDelete");
+const formPeople = document.getElementById("formPeople");
+const inputNombres = document.getElementById("inputNombre");
+const inputApellido = document.getElementById("inputApellido");
+
 let personas = [];
 
 if (localStorage.getItem("personas")) {
@@ -17,8 +29,7 @@ if (localStorage.getItem("personas")) {
   localStorage.setItem("personas", JSON.stringify(personas));
 }
 
-console.log(personas)
-
+//Fetch para mostra nombres ya cargados en usuarios.json
 if (personas.length === 0) {
   window.onload = monstrarNombresFinal()
   function monstrarNombresFinal() {
@@ -32,4 +43,20 @@ if (personas.length === 0) {
   }
 }
 
-export { value, machin, win, lost, personas };
+export {
+  value,
+  machin,
+  win,
+  lost,
+  personas,
+  rockButton,
+  pepperButton,
+  scissorButton,
+  resultado,
+  mostrarNombres,
+  mostrarApellido,
+  buttonDelete,
+  formPeople,
+  inputNombres,
+  inputApellido,
+};
